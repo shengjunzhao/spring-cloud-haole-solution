@@ -23,9 +23,15 @@
 hs_err_pid*
 
 #IDEA产生的文件
-.idea*
+.idea/
 *.iml
 target
 .settings*
 .classpath
 .project
+.gradle/
+/build
+bin/
+gen/
+build/
+
