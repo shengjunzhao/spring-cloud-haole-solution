@@ -1,6 +1,6 @@
 
 
-apply plugin 'java'
+// apply plugin: 'java'
 
 // buildScript里的repositories是这个脚本需要的依赖库，与项目无关，在执行脚本时，会从这个库里download对应的jar和插件。
 buildScript {
