@@ -1,12 +1,12 @@
 
-idea {
-    project {
-        languageLevel = '1.8'
-    }
-}
+//idea {
+//    project {
+//        languageLevel = '1.8'
+//    }
+//}
 
 // buildScript里的repositories是这个脚本需要的依赖库，与项目无关，在执行脚本时，会从这个库里download对应的jar和插件。
-buildScript {
+buildscript {
     repositories {
         mavenCentral()
         jcenter()
