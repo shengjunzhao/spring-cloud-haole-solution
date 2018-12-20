@@ -1,11 +1,15 @@
 
-
-// apply plugin: 'java'
+idea {
+    project {
+        languageLevel = '1.8'
+    }
+}
 
 // buildScript里的repositories是这个脚本需要的依赖库，与项目无关，在执行脚本时，会从这个库里download对应的jar和插件。
 buildScript {
     repositories {
         mavenCentral()
+        jcenter()
     }
 }
 // repositories是项目里需要依赖的jar的库。
@@ -17,4 +21,30 @@ repositories {
     maven { url "https://repo.spring.io/snapshot" }
     maven { url "https://repo.spring.io/milestone" }
 
+}
+
+//  subprojects 方法遍历这个容器的所有元素并且注入指定的配置 .
+//  通过这种方法, 我们可以很容易的定义所有档案和通用依赖的内容清单
+subprojects {
+    apply plugin: 'java'
+
+    group = "com.haole.${githubProjectName}"
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        jcenter()
+    }
+
+//    test {
+//        forkEvery = 1
+//        systemProperty 'java.awt.headless', 'true'
+//    }
+
+    jar {
+        manifest {
+            attributes('Build-Time-ISO-8601': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"))
+        }
+    }
 }
