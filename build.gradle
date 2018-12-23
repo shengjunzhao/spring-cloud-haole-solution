@@ -1,40 +1,73 @@
 
-//idea {
-//    project {
-//        languageLevel = '1.8'
-//    }
-//}
+
 
 // buildScript里的repositories是这个脚本需要的依赖库，与项目无关，在执行脚本时，会从这个库里download对应的jar和插件。
 buildscript {
+    ext {
+        springbootVerson ='2.1.1.RELEASE'
+    }
     repositories {
+        mavenLocal()
         mavenCentral()
         jcenter()
     }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springbootVerson}"
+    }
 }
+
+apply plugin: 'idea'
+
 // repositories是项目里需要依赖的jar的库。
-repositories {
-    mavenLocal()
-    maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
-    mavenCentral()
-    jcenter()
-    maven { url "https://repo.spring.io/snapshot" }
-    maven { url "https://repo.spring.io/milestone" }
+//repositories {
+//    mavenLocal()
+//    maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+//    mavenCentral()
+//    jcenter()
+//    maven { url "https://repo.spring.io/snapshot" }
+//    maven { url "https://repo.spring.io/milestone" }
+//}
+
+// allprojects是父Project的一个属性，该属性会返回该Project对象以及其所有子项目
+allprojects {
+    apply plugin: 'java'
+    group = "com.haole.${haoleCloudProjectName}"
+    version = '0.0.1-SNAPSHOT'
+
+    ext {
+        haoleCloudProjectName = 'haoleClound'
+
+        springVersion = '5.1.3.RELEASE'
+        springbootVerson = '2.1.1.RELEASE'
+    }
+
 
 }
 
-//  subprojects 方法遍历这个容器的所有元素并且注入指定的配置 .
+//  subprojects subprojects和allprojects一样，也是父Project的一个属性，该属性会返回所有子项目
+//  可以配置所有子项目共有的设置，比如共同的插件、repositories、依赖版本以及依赖配置
+//  方法遍历这个容器的所有元素并且注入指定的配置 .
 //  通过这种方法, 我们可以很容易的定义所有档案和通用依赖的内容清单
 subprojects {
-    apply plugin: 'java'
 
-    group = "com.haole.${githubProjectName}"
+    
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'org.spring.dependency-management'
 
+    
+
+// 指定编译 .java 文件的 JDK 版本
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
     repositories {
+        mavenLocal()
+        maven {url "http://maven.aliyun.com/nexus/content/groups/public/"}
+        mavenCentral()
         jcenter()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
     }
 
 //    test {
@@ -44,7 +77,30 @@ subprojects {
 
     jar {
         manifest {
-            attributes('Build-Time-ISO-8601': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"))
+            attributes 'Build-Time-ISO-8601': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                    'Created-By':'shengjunzhao'
         }
     }
 }
+
+/**
+apply plugin: 'maven'
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //SNAPSHOT版本提交地址
+            snapshotRepository(url: 'http://maven.nexus.com/nexus/content/repositories/snapshots/') {
+                authentication(userName: 'admin', password: 'abc123')
+            }
+
+            //正式版本提交地址
+            repository(url: 'http://maven.nexus.com/nexus/content/repositories/releases/') {
+                authentication(userName: 'admin', password: 'abc123')
+            }
+            pom.groupId = group
+            pom.version = version
+            pom.artifactId = 'mybatisspringboot'
+        }
+    }
+}
+ */
