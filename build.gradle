@@ -31,16 +31,18 @@ apply plugin: 'idea'
 
 // allprojects是父Project的一个属性，该属性会返回该Project对象以及其所有子项目
 allprojects {
-    apply plugin: 'java'
-    group = "com.haole.${haoleCloudProjectName}"
-    version = '0.0.1-SNAPSHOT'
-
     ext {
         haoleCloudProjectName = 'haoleClound'
 
         springVersion = '5.1.3.RELEASE'
         springbootVerson = '2.1.1.RELEASE'
     }
+
+    apply plugin: 'java'
+    group = "com.haole.${haoleCloudProjectName}"
+    version = '0.0.1-SNAPSHOT'
+
+
 
 
 }
