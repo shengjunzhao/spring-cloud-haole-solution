@@ -55,11 +55,9 @@ allprojects {
         maven { url "https://repo.spring.io/milestone" }
     }
 
-    dependencyManagement {
-        imports {
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-        }
-    }
+
+
+
 
 
 }
@@ -71,7 +69,7 @@ allprojects {
 subprojects {
 
     apply plugin: 'org.springframework.boot'
-    apply plugin: 'org.spring.dependency-management'
+    apply plugin: 'io.spring.dependency-management'
 
 
 // 指定编译 .java 文件的 JDK 版本
@@ -81,9 +79,24 @@ subprojects {
 
 
     dependencies {
+//        compile "org.springframework.boot:spring-boot-autoconfigure"
+//        compile "org.springframework.boot:spring-boot-actuator"
+//        compile "org.slf4j:slf4j-api"
+//        compile "org.slf4j:jul-to-slf4j"
+//        compile "ch.qos.logback:logback-core"
+//        compile "ch.qos.logback:logback-classic"
 
         testCompile "org.springframework.boot:spring-boot-starter-test"
     }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+
+
 
 
 

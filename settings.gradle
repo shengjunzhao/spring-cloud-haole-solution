@@ -1,1 +1,3 @@
-rootProject.name = 'spring-cloud-halao-solution'
+rootProject.name = 'spring-cloud-haole-solution'
+include 'spring-cloud-haole-config'
+
