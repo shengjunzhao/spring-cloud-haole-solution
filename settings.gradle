@@ -1,3 +1,4 @@
 rootProject.name = 'spring-cloud-haole-solution'
 include 'spring-cloud-haole-config'
+include 'spring-cloud-haole-gateway'
 

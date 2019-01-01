@@ -7,9 +7,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/shengjunzhao/config-server/     # 配置git仓库的地址
-          search-paths: config-repo                               # git仓库地址下的相对地址，可以配置多个，用,分割。
+          uri: https://github.com/shengjunzhao/config-server.git/     # 配置git仓库的地址
+          search-paths: /config-repo,/config-repo/service-uses      # git仓库地址下的相对地址，可以配置多个，用,分割。
           username: shengjunzhao                                  # git仓库的账号
           password: goldGit18knift                                # git仓库的密码
-#  profile:
+#      lable: master
+#  profiles:
 #    active: dev

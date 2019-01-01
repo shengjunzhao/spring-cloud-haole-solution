@@ -1,0 +1,13 @@
+server:
+  port: 11002
+spring:
+  application:
+    name: spring-cloud-haole-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: neo_route
+          uri: http://www.ityouknow.com
+          predicates:
+            - Path=/spring-cloud
