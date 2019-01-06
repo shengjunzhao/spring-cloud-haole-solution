@@ -1,7 +1,8 @@
 rootProject.name = 'spring-cloud-haole-solution'
 include 'spring-cloud-haole-config'
 include 'spring-cloud-haole-gateway'
-include 'com-cloud-haole-user'
+include 'spring-cloud-haole-user'
 include 'spring-cloud-haole-account'
 include 'spring-cloud-haole-card'
+
 
