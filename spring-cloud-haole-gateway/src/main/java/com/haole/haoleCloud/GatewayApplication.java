@@ -1,4 +1,4 @@
-package com.haole.haoCloud;
+package com.haole.haoleCloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

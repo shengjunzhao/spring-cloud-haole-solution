@@ -4,11 +4,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * Created by shengjunzhao on 2019/1/6.
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = { "com.haole.haoleCloud" })
+@EnableDiscoveryClient
+@EnableFeignClients
 public class UserApplication {
     private static final Logger logger = LoggerFactory.getLogger(UserApplication.class);
 
