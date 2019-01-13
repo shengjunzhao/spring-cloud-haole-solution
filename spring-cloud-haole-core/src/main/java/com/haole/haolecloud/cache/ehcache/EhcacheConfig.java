@@ -1,9 +1,5 @@
 package com.haole.haolecloud.cache.ehcache;
 
-import org.ehcache.CacheManager;
-import org.ehcache.config.builders.CacheManagerBuilder;
-import org.ehcache.xml.XmlConfiguration;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
