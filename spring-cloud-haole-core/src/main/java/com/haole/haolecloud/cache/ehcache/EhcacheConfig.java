@@ -1,4 +1,4 @@
-package com.haole.haoleCloud.cache.ehcache;
+package com.haole.haolecloud.cache.ehcache;
 
 import org.ehcache.CacheManager;
 import org.ehcache.config.builders.CacheManagerBuilder;

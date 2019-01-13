@@ -1,4 +1,4 @@
-package com.haole.haoleCloud.dto;
+package com.haole.haolecloud.dto;
 
 import java.io.Serializable;
 import java.util.concurrent.atomic.AtomicInteger;

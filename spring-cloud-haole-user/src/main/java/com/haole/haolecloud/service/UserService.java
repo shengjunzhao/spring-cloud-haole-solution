@@ -1,6 +1,6 @@
-package com.haole.haoleCloud.service;
+package com.haole.haolecloud.service;
 
-import com.haole.haoleCloud.dto.User;
+import com.haole.haolecloud.dto.User;
 
 import java.util.List;
 

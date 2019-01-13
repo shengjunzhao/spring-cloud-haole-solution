@@ -1,4 +1,4 @@
-package com.haole.haoleCloud;
+package com.haole.haolecloud;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 /**
  * Created by shengjunzhao on 2019/1/6.
  */
-@SpringBootApplication(scanBasePackages = { "com.haole.haoleCloud" })
+@SpringBootApplication(scanBasePackages = {"com.haole.haolecloud"})
 @EnableDiscoveryClient
 @EnableFeignClients
 public class UserApplication {

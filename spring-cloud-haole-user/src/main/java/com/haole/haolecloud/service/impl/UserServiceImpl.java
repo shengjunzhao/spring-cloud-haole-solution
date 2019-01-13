@@ -1,7 +1,7 @@
-package com.haole.haoleCloud.service.impl;
+package com.haole.haolecloud.service.impl;
 
-import com.haole.haoleCloud.dto.User;
-import com.haole.haoleCloud.service.UserService;
+import com.haole.haolecloud.dto.User;
+import com.haole.haolecloud.service.UserService;
 import org.ehcache.Cache;
 import org.ehcache.CacheManager;
 import org.slf4j.Logger;

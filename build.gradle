@@ -35,7 +35,7 @@ apply plugin: "io.spring.dependency-management"
 // allprojects是父Project的一个属性，该属性会返回该Project对象以及其所有子项目
 allprojects {
     ext {
-        haoleCloudProjectName = 'haoleCloud'
+        haoleCloudProjectName = 'haolecloud'
 
         springCloudVersion = 'Finchley.SR2'
         springVersion = '5.1.3.RELEASE'

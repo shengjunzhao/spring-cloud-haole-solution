@@ -1,7 +1,7 @@
-package com.haole.haoleCloud.service.controller;
+package com.haole.haolecloud.service.controller;
 
-import com.haole.haoleCloud.dto.User;
-import com.haole.haoleCloud.service.UserService;
+import com.haole.haolecloud.dto.User;
+import com.haole.haolecloud.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

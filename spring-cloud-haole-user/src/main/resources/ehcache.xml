@@ -9,6 +9,18 @@
     <!--<persistence directory="java.io.tmpdir"/>-->
 
     <cache-template name="default">
+        <listeners>
+            <listener>
+                <class>com.haole.haoleCloud.cache.ehcache.EventLogger</class>
+                <event-firing-mode>ASYNCHRONOUS</event-firing-mode>
+                <event-ordering-mode>UNORDERED</event-ordering-mode>
+                <events-to-fire-on>CREATED</events-to-fire-on>
+                <events-to-fire-on>UPDATED</events-to-fire-on>
+                <events-to-fire-on>EXPIRED</events-to-fire-on>
+                <events-to-fire-on>REMOVED</events-to-fire-on>
+                <events-to-fire-on>EVICTED</events-to-fire-on>
+            </listener>
+        </listeners>
         <resources>
             <heap unit="entries">2000</heap>
             <offheap unit="MB">100</offheap>
@@ -17,7 +29,7 @@
 
     <cache alias="user" uses-template="default">
         <key-type>java.lang.String</key-type>
-        <value-type>com.haole.haoleCloud.dto.User</value-type>
+        <value-type>com.haole.haolecloud.dto.User</value-type>
         <expiry>
             <ttl unit="seconds">600</ttl>
         </expiry>
