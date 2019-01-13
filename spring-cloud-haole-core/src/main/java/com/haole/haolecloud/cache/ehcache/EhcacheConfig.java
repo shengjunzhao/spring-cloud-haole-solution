@@ -13,7 +13,7 @@ public class EhcacheConfig {
     private final String ehcachexml = "/ehcache.xml";
 
     @Bean(value = "cacheManager")
-    public EhCacheManager3FactoryBean ehcacheManage() throws Exception {
+    public EhCacheManager3FactoryBean ehcacheManage() {
         EhCacheManager3FactoryBean factoryBean = new EhCacheManager3FactoryBean();
         factoryBean.setCacheManagerUri(ehcachexml);
         return factoryBean;
