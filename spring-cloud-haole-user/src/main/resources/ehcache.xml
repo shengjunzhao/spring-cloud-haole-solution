@@ -11,7 +11,7 @@
     <cache-template name="default">
         <listeners>
             <listener>
-                <class>com.haole.haoleCloud.cache.ehcache.EventLogger</class>
+                <class>com.haole.haolecloud.cache.ehcache.EventLogger</class>
                 <event-firing-mode>ASYNCHRONOUS</event-firing-mode>
                 <event-ordering-mode>UNORDERED</event-ordering-mode>
                 <events-to-fire-on>CREATED</events-to-fire-on>
