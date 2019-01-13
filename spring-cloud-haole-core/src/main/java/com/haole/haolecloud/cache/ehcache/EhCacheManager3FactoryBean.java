@@ -56,11 +56,10 @@ public class EhCacheManager3FactoryBean implements FactoryBean<CacheManager>, Be
     public void afterPropertiesSet() throws Exception {
 //        if (null == beanClassLoader) {
 //            cacheManager = CacheManagerBuilder.newCacheManager(new XmlConfiguration(getClass().getResource(cacheManagerUri)));
-//            cacheManager.init();
 //        } else {
 //            cacheManager = CacheManagerBuilder.newCacheManager(new XmlConfiguration(beanClassLoader.getResource(cacheManagerUri)));
-//            cacheManager.init();
 //        }
+//        cacheManager.init();
         cacheManager = CacheManagerBuilder.newCacheManager(new XmlConfiguration(getClass().getResource(cacheManagerUri)));
         cacheManager.init();
     }
