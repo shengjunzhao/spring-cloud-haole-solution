@@ -4,7 +4,7 @@
 // buildScript里的repositories是这个脚本需要的依赖库，与项目无关，在执行脚本时，会从这个库里download对应的jar和插件。
 buildscript {
     ext {
-        springbootVerson ='2.0.3.RELEASE' //   2.1.1.RELEASE
+        springbootVerson ='2.0.8.RELEASE' //    2.0.3.RELEASE 2.1.2.RELEASE
     }
     repositories {
         mavenLocal()
