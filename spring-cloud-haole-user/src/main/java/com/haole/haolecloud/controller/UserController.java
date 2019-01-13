@@ -1,4 +1,4 @@
-package com.haole.haolecloud.service.controller;
+package com.haole.haolecloud.controller;
 
 import com.haole.haolecloud.dto.User;
 import com.haole.haolecloud.service.UserService;
