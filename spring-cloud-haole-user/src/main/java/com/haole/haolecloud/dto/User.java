@@ -4,10 +4,13 @@ import java.io.Serializable;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Created by shengjunzhao on 2019/1/12.
+ *
+ * @author shengjunzhao
+ * @date 2019/1/12
  */
 public class User implements Serializable {
 
+    private static final long serialVersionUID = 1626718167226945732L;
     private static final String prefix = "1101";
     private static AtomicInteger id = new AtomicInteger();
 
