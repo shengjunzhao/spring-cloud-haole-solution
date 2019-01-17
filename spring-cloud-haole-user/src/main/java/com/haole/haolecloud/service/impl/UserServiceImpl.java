@@ -41,7 +41,6 @@ public class UserServiceImpl implements UserService {
         return list;
     }
 
-
     private Cache<String, User> getUserCache() {
         return cacheManager.getCache("user", String.class, User.class);
     }

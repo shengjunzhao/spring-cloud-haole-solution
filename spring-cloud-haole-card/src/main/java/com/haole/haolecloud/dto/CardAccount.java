@@ -21,12 +21,12 @@ public class CardAccount implements Serializable {
     private CardType cardType;
     private String accountNo;
     private String userNo;
-    private String mainCardId;
+    private String mainCardNo;
     private boolean primaryCard;
     /**
      * 卡网络号
      */
-    private String cardNetID;
+    private String cardNetId;
     /**
      * 启用日期
      */
@@ -66,7 +66,7 @@ public class CardAccount implements Serializable {
     private CardStatus cardStatus;
 
 
-    public static synchronized Long generateUserNo() {
+    public static synchronized Long generateCardAccountId() {
         return id.getAndIncrement();
     }
 
@@ -110,12 +110,12 @@ public class CardAccount implements Serializable {
         this.userNo = userNo;
     }
 
-    public String getMainCardId() {
-        return mainCardId;
+    public String getMainCardNo() {
+        return mainCardNo;
     }
 
-    public void setMainCardId(String mainCardId) {
-        this.mainCardId = mainCardId;
+    public void setMainCardNo(String mainCardNo) {
+        this.mainCardNo = mainCardNo;
     }
 
     public boolean isPrimaryCard() {
@@ -126,12 +126,12 @@ public class CardAccount implements Serializable {
         this.primaryCard = primaryCard;
     }
 
-    public String getCardNetID() {
-        return cardNetID;
+    public String getCardNetId() {
+        return cardNetId;
     }
 
-    public void setCardNetID(String cardNetID) {
-        this.cardNetID = cardNetID;
+    public void setCardNetID(String cardNetId) {
+        this.cardNetId = cardNetId;
     }
 
     public Date getCardSignedDate() {
