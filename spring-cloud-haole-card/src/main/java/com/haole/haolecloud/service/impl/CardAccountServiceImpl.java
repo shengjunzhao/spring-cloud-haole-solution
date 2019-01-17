@@ -29,7 +29,8 @@ public class CardAccountServiceImpl implements CardAccountService {
     private CacheManager cacheManager;
 
     @Override
-    public CardAccount addCardAccount(String userNo, String accountNo, String cardNetId, String cardNo, CardType cardType, Date cardSignedDate, Date cardExpiredDate, String bindPlateNumber) {
+    public CardAccount addCardAccount(String userNo, String accountNo, String cardNetNo, String cardNo, CardType cardType,
+                                      Date cardSignedDate, Date cardExpiredDate, String bindPlateNumber) {
         Cache<String, CardAccount> cardAccountCache = getCardAccountCache();
         CardAccount cardAccount = new CardAccount();
         cardAccount.setCardAccoundId(CardAccount.generateCardAccountId());
@@ -37,7 +38,7 @@ public class CardAccountServiceImpl implements CardAccountService {
         cardAccount.setCardType(cardType);
         cardAccount.setUserNo(userNo);
         cardAccount.setAccountNo(accountNo);
-        cardAccount.setCardNetID(cardNetId);
+        cardAccount.setCardNetID(cardNetNo);
         cardAccount.setCardSignedDate(cardSignedDate);
         cardAccount.setCardExpiredDate(cardExpiredDate);
         cardAccount.setAssignBalance(BigDecimal.ZERO);

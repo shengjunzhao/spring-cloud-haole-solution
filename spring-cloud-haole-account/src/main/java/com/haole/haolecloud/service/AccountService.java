@@ -3,6 +3,7 @@ package com.haole.haolecloud.service;
 import com.haole.haolecloud.constant.AccountType;
 import com.haole.haolecloud.constant.DepositType;
 import com.haole.haolecloud.dto.Account;
+import com.haole.haolecloud.dto.CardAccount;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -18,5 +19,7 @@ public interface AccountService {
     Account addAccount(String userNo, AccountType accountType, DepositType depositType);
     Account updateMainCard(String accountNo,String mainCardNo);
     Account updateAccountBalance(String accountNo, BigDecimal amount);
+    CardAccount addCardAccount(String userNo, String accountNo, String cardNetNo, String cardNo, Integer cardType,
+                               String bindPlateNumber);
 
 }

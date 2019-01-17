@@ -8,11 +8,13 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
- * Created by shengjunzhao on 2019/1/6.
+ *
+ * @author shengjunzhao
+ * @date 2019/1/6
  */
 @SpringBootApplication(scanBasePackages = {"com.haole.haolecloud"})
 @EnableDiscoveryClient
-@EnableFeignClients
+@EnableFeignClients(basePackages = "com.haole.haolecloud.stub")
 public class UserApplication {
     private static final Logger logger = LoggerFactory.getLogger(UserApplication.class);
 

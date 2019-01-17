@@ -4,7 +4,9 @@ import com.haole.haolecloud.constant.AccountType;
 import com.haole.haolecloud.constant.DepositType;
 import com.haole.haolecloud.constant.IssueStatus;
 import com.haole.haolecloud.dto.Account;
+import com.haole.haolecloud.dto.CardAccount;
 import com.haole.haolecloud.service.AccountService;
+import com.haole.haolecloud.stub.CardStubService;
 import org.ehcache.Cache;
 import org.ehcache.CacheManager;
 import org.slf4j.Logger;
@@ -27,6 +29,8 @@ public class AccountServiceImpl implements AccountService {
 
     @Autowired
     private CacheManager cacheManager;
+    @Autowired
+    private CardStubService cardStubService;
 
     @Override
     public List<Account> findAccountByUser(String userNo) {
@@ -74,6 +78,11 @@ public class AccountServiceImpl implements AccountService {
         account.setBalance(account.getBalance().add(amount));
         accountCache.put(account.getAccountNo(), account);
         return account;
+    }
+
+    @Override
+    public CardAccount addCardAccount(String userNo, String accountNo, String cardNetNo, String cardNo, Integer cardType, String bindPlateNumber) {
+        return cardStubService.addCardAccount(userNo, accountNo, cardNetNo, cardNo, cardType, bindPlateNumber);
     }
 
     private Cache<String, Account> getAccountCache() {

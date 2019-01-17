@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface CardAccountService {
 
-    CardAccount addCardAccount(String userNo, String accountNo, String cardNetId, String cardNo, CardType cardType,
+    CardAccount addCardAccount(String userNo, String accountNo, String cardNetNo, String cardNo, CardType cardType,
                                Date cardSignedDate, Date cardExpiredDate, String bindPlateNumber);
 
     List<CardAccount> findCardAccountByAccount(String accountNo);
