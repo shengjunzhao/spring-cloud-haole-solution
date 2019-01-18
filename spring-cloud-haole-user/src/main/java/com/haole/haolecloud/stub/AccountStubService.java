@@ -3,6 +3,7 @@ package com.haole.haolecloud.stub;
 import com.haole.haolecloud.dto.Account;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -13,5 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface AccountStubService {
 
     @GetMapping("/account/add")
-    Account addAccount(String userNo, Integer accountType, Integer depositType);
+    Account addAccount(@RequestParam("userNo")String userNo, @RequestParam("accountType")Integer accountType,
+                       @RequestParam("depositType") Integer depositType);
 }
