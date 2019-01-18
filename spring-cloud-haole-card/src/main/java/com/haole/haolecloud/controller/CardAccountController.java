@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Date;
 
 /**
@@ -36,8 +37,8 @@ public class CardAccountController {
         CardType ct = CardType.getCardTypeByCode(cardType);
         LocalDateTime localDateTime = LocalDateTime.now();
         Date cardSignedDate = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
-        localDateTime.plus(1, ChronoUnit.YEARS);
-        Date cardExpiredDate = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
+        LocalDateTime nextYear = localDateTime.with(TemporalAdjusters.firstDayOfNextYear());
+        Date cardExpiredDate = Date.from(nextYear.atZone(ZoneId.systemDefault()).toInstant());
         CardAccount cardAccount = cardAccountService.addCardAccount(userNo, accountNo, cardNetNo, cardNo, ct, cardSignedDate,
                 cardExpiredDate, bindPlateNumber);
         cardService.bindCard2user(cardNetNo, cardNo, userNo, accountNo);
