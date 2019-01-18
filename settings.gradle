@@ -5,4 +5,6 @@ include 'spring-cloud-haole-user'
 include 'spring-cloud-haole-account'
 include 'spring-cloud-haole-card'
 include 'spring-cloud-haole-core'
+include 'spring-cloud-haole-card-api'
+include 'spring-cloud-haole-account-api'
 

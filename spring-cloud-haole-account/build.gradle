@@ -4,4 +4,6 @@ dependencies  {
     compile "org.springframework.cloud:spring-cloud-starter-openfeign"
     compile "org.springframework.boot:spring-boot-starter-web"
     compile project(":spring-cloud-haole-core")
+    compile project(":spring-cloud-haole-card-api")
+    compile project(":spring-cloud-haole-account-api")
 }

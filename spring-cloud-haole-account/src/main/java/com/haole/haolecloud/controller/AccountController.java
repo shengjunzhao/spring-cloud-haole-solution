@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+
 /**
  * @author shengjunzhao
  * @date 2019/1/17
  */
 @RestController
-@RequestMapping("account")
+@RequestMapping("/account")
 public class AccountController {
 
     private static final Logger log = LoggerFactory.getLogger(AccountController.class);
