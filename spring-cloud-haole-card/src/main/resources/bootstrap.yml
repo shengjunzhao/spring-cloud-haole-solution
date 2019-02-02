@@ -1,17 +1,19 @@
 spring:
   cloud:
-      consul:
-          host: localhost
-          port: 8500
-          discovery:
-            instanceId: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
-            serviceName: ${spring.application.name}
-#            healthCheckPath: ${management.context-path}/health
-            healthCheckPath: /actuator/health
-            healthCheckInterval: 15s
-            tags: cluster=${spring.application.name},app-config=${spring.application.name}
-            preferIpAddress: true
-            register: true
+    consul:
+      host: localhost
+      port: 8500
+      #          host: haole.consul.com
+      #          port: 18500
+      discovery:
+        instanceId: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
+        serviceName: ${spring.application.name}
+        #            healthCheckPath: ${management.context-path}/health
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 15s
+        tags: cluster=${spring.application.name},app-config=${spring.application.name}
+        preferIpAddress: true
+        register: true
   sleuth:
     sampler:
       probability:
@@ -22,7 +24,7 @@ management:
       exposure:
         include: '*'
   endpoint:
-      health:
-        show-details: ALWAYS
+    health:
+      show-details: ALWAYS
 
 
