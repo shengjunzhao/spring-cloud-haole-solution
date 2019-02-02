@@ -5,6 +5,7 @@ spring:
       port: 8500
       #          host: haole.consul.com
       #          port: 18500
+
       discovery:
         instanceId: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
         serviceName: ${spring.application.name}
