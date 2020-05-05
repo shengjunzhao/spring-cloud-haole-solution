@@ -4,7 +4,7 @@
 // buildScript里的repositories是这个脚本需要的依赖库，与项目无关，在执行脚本时，会从这个库里download对应的jar和插件。
 buildscript {
     ext {
-        springbootVerson ='2.0.8.RELEASE' //    2.0.3.RELEASE 2.1.2.RELEASE
+        springbootVerson ='2.1.7.RELEASE' //    2.0.8.RELEASE 2.1.7.RELEASE
     }
     repositories {
         mavenLocal()
@@ -37,9 +37,9 @@ allprojects {
     ext {
         haoleCloudProjectName = 'haolecloud'
 
-        springCloudVersion = 'Finchley.SR2' //  Finchley.RELEASE
-        springVersion = '5.1.3.RELEASE'
-        springbootVerson = '2.1.1.RELEASE'
+        springCloudVersion = 'Hoxton.SR4' // Greenwich.SR2 Finchley.SR2  Finchley.RELEASE
+        springVersion = '5.2.6.RELEASE'
+        springbootVerson = '2.2.1.RELEASE' // 2.1.1.RELEASE
     }
 
     apply plugin: 'java'
