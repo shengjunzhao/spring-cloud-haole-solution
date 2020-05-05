@@ -1,7 +1,9 @@
 package com.haole.haolecloud.constant;
 
 /**
- * Created by shengjunzhao on 2019/1/17.
+ *
+ * @author shengjunzhao
+ * @date 2019/1/17
  */
 public enum DepositType {
 
